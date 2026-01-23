@@ -1,6 +1,7 @@
         <!-- Static image under carousel -->
 
     <img src="{{ asset('./assets/CAROUSEL.png') }}" alt="Carousel Background" class="carousel-background">
+    <img src="{{ asset('./assets/CAROUSEL.png') }}" alt="Carousel Background" class="carousel-background">
 
         <!-- SCROLLING BANNER -->
     <div class="scrolling-banner-wrapper">
