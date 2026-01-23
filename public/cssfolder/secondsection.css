@@ -1,0 +1,202 @@
+      /* Responsive image sizing for site assets */
+.carousel-background {
+            position: absolute;
+            top: 84%;
+            left: 0;
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            z-index: 2; /* sits above carousel (z:0) and below overlay (z:2/10) */
+}
+        /* Scrolling banner overlay */
+        .scrolling-banner-wrapper {
+            position: absolute;
+            top: 94%; /* adjust if you want it higher/lower */
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* left and right flush */
+            z-index: 4; /* above carousel slides and background */
+            pointer-events: auto;
+            padding: 0; /* no space at edges */
+        }
+        /* Base banner styles (individual banners positioned left/right) */
+        .scrolling-banner {
+            max-width: 50%;
+
+            background: rgb(0, 0, 0);
+            color: #fff;
+            padding: 8px 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+            position: static; /* use flex layout from wrapper */
+            top: auto;
+        }
+        .scrolling-banner.left {
+            left: 0;
+            width: 39%;
+            text-align: left;
+            position: relative;
+            padding-right: 28px; /* space so text doesn't hit the slanted edge */
+            -webkit-clip-path: polygon(0 0, calc(100% - 36px) 0, 100% 100%, 0 100%); /* backslash slant */
+            clip-path: polygon(0 0, calc(100% - 36px) 0, 100% 100%, 0 100%); /* backslash slant */
+            overflow: hidden;
+        }
+        .scrolling-banner.right {
+            right: 0;
+            width: 38.5%;
+            text-align: right;
+            position: relative;
+            padding-left: 28px; /* space so text doesn't hit the slanted edge */
+            -webkit-clip-path: polygon(36px 0, 100% 0, 100% 100%, 0 100%); /* slash slant on left side */
+            clip-path: polygon(36px 0, 100% 0, 100% 100%, 0 100%); /* slash slant on left side */
+            overflow: hidden;
+        }
+
+
+        /* Track that scrolls horizontally */
+        .scrolling-banner .track {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            white-space: nowrap;
+            will-change: transform;
+        }
+
+        @keyframes scrollRight {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0%); }
+        }
+
+        :root { --scroll-duration: 18s; }
+
+        /* set initial track position so both start in the same place */
+        .scrolling-banner .track { transform: translateX(-50%); }
+
+        /* Apply animation unless user prefers reduced motion */
+        @media (prefers-reduced-motion: no-preference) {
+            .scrolling-banner.left .track.animate,
+            .scrolling-banner.right .track.animate {
+                animation: scrollRight var(--scroll-duration) linear infinite;
+                animation-delay: 0s;
+                animation-timing-function: linear;
+                animation-fill-mode: both;
+                animation-play-state: running;
+            }
+        }
+
+        .scrolling-banner p { margin: 0; font-weight: 600; letter-spacing: 1.5px; }
+
+        /* Make left and right banner text bolder for emphasis */
+        .scrolling-banner .leftbanner,
+        .scrolling-banner .rightbanner { font-weight: 800; }
+
+        /* Highlight specific words in banners */
+        .scrolling-banner .play { color: #6f4cb2; font-weight: 700; font-style: italic; }
+        .scrolling-banner .culture { color: #63c5b4; font-weight: 700; font-style: italic; }
+        .scrolling-banner .technology { color: #fcc810; font-weight: 700; font-style: italic; }
+
+        /* keep duplicates visible for seamless loop */
+
+         /* Banner brought to front */
+  .banner {
+    position: relative; /* relative to body */
+    z-index: 10;       /* higher than background */
+    text-align: center;
+    margin: 800px auto;
+    top: 20%;           /* push it down a bit */
+
+  }
+
+  .banner h2 {
+    font-size: 34px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+    font: 'Arial', sans-serif;
+  }
+
+  .banner h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #1a0f47;
+  }
+    .enter-button {
+
+        width: 250px;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+  .main-carousel {
+            position: absolute;
+            top: 120%;
+            left: 0;
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            z-index: 2; /* sits above carousel (z:0) and below overlay (z:2/10) */
+}
+
+/*MOBILE*/
+
+@media (min-width: 375px) and (max-width: 425px) {
+  .carousel-background {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    left: 0;
+    right: 0;
+    top: 51.5%;
+    height: 450px;
+  }
+ /* Scrolling banner overlay */
+        .scrolling-banner-wrapper {
+            top: 55%; /* adjust if you want it higher/lower */
+        }
+        .scrolling-banner {
+            padding: 2px 16px;
+        }
+        .scrolling-banner.left {
+            width: 35%;
+            padding-right: 28px; /* space so text doesn't hit the slanted edge */
+            -webkit-clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 100%, 0 100%); /* backslash slant */
+            clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 100%, 0 100%); /* backslash slant */
+        }
+        .scrolling-banner.right {
+            width: 34.5%;
+            padding-left: 28px; /* space so text doesn't hit the slanted edge */
+            -webkit-clip-path: polygon(25px 0, 100% 0, 100% 100%, 0 100%); /* slash slant on left side */
+            clip-path: polygon(25px 0, 100% 0, 100% 100%, 0 100%); /* slash slant on left side */
+        }
+        .scrolling-banner p { margin: 0; font-weight: 400; letter-spacing: 1.5px; }
+
+        /* Make left and right banner text bolder for emphasis */
+        .scrolling-banner .leftbanner,
+        .scrolling-banner .rightbanner { font-weight: 200; }
+
+        /* Highlight specific words in banners */
+        .scrolling-banner .play { color: #6f4cb2; font-weight: 700; font-style: italic; }
+        .scrolling-banner .culture { color: #63c5b4; font-weight: 700; font-style: italic; }
+        .scrolling-banner .technology { color: #fcc810; font-weight: 700; font-style: italic; }
+
+          .banner {
+           margin: 380px auto;
+        }
+          .banner h2 {
+          font-size: 16px;
+          font-weight: 600;
+        }
+          .banner h1 {
+          font-size: 19px;
+          font-weight: 700;
+          margin-bottom: 10px;
+
+  }
+      .enter-button {
+        width: 150px;
+        height: auto;
+    }
+}

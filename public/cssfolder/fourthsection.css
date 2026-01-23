@@ -1,0 +1,156 @@
+  .fourth-section {
+    background-color: #fbf8ff; /* background */
+  }
+  /* Responsive image sizing for site assets */
+  .fourthtitle {
+    position: absolute;
+    top: 350%;
+    left: 0;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .fourthbody{
+    position: absolute;
+    top: 375%;
+    left: 0;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  /* Centered row and column layout */
+  .row-fourth {
+    position: relative; /* allow normal flow */
+    top: auto;
+    left: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* center items horizontally */
+    align-items: center;
+    padding: 180px 130px 0 150px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+        z-index: 1;
+
+  }
+
+  .col { display:flex; align-items:center; justify-content:center; }
+
+  .col img {
+    width: auto;
+    max-width: 100%;
+    height: 525px;
+    object-fit: cover;
+    display: block;
+    margin-top: 260%;
+    padding:10px;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+
+  /* Hover pop effect */
+  .col img:hover { transform: translateY(-6px) scale(1.03);}
+
+  .row-title{
+    position: relative; /* allow normal flow */
+    align-items: left;
+    z-index: 2;
+    padding: 20px 0 100px 280px;
+  }
+.t1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px;
+}
+
+  .t2{
+    font: italic 800 30px 'Poppins', sans-serif;
+        margin-top: -40px;
+
+    }
+        /* Scrolling banner overlay */
+        .fourth-scrolling-banner-wrapper {
+            position: absolute;
+            top: 470%; /* adjust if you want it higher/lower */
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* left and right flush */
+            z-index: 0; /* above carousel slides and background */
+            pointer-events: auto;
+            padding: 0; /* no space at edges */
+        }
+        /* Base banner styles (individual banners positioned left/right) */
+        .fourth-scrolling-banner {
+            max-width: 100%;
+            background: rgb(0, 0, 0);
+            color: #fff;
+            padding: 8px 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+            position: static; /* use flex layout from wrapper */
+            top: auto;
+        }
+
+        .fourth-scrolling-banner.right {
+            right: 0;
+            width: 100%;
+            text-align: right;
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .fourth-scrolling-banner p { margin: 5px; font-weight: 600; letter-spacing: 1.5px; }
+
+        /* Make left and right banner text bolder for emphasis */
+        .fourth-scrolling-banner .fourth-rightbanner { font-weight: 800; }
+
+        /* Highlight specific words in banners */
+        .fourth-scrolling-banner .play { color: #6f4cb2; font-weight: 700; font-style: italic; }
+        .fourth-scrolling-banner .culture { color: #63c5b4; font-weight: 700; font-style: italic; }
+        .fourth-scrolling-banner .technology { color: #fcc810; font-weight: 700; font-style: italic; }
+
+
+  .core-message {
+      width: 98%;
+      height: 98%;
+      object-fit: cover; /* fills screen without stretching */
+      display: block;
+      margin: -30px auto; /* centers the image */
+      z-index:-3;
+    }
+
+    .fifth-banner {
+      background: linear-gradient(90deg, #ddc4f1 0%, #f1e8fd 50%, #f4f4fe 100%);
+      padding-bottom: 200px;
+
+  }
+    .fifthcontent {
+    position: relative; /* relative to body */
+    z-index: 10;       /* higher than background */
+    text-align: center;
+    margin: 150px auto;
+  }
+
+  .fifthcontent h2 {
+    font-size: 34px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+    font: 'Arial', sans-serif;
+  }
+
+  .fifthbanner h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #1a0f47;
+  }
+    .fifthenter-button {
+
+        width: 250px;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }

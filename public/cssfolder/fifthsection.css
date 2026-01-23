@@ -1,0 +1,149 @@
+.footer-exact {
+  margin-top: -250px;
+  position: relative;
+  width: 100%;
+}
+/* 🔑 wrapper becomes reference */
+.footer-bg-wrap {
+  position: relative;
+  width: 100%;
+}
+/* ============================= */
+/* FOOTER BACKGROUND IMAGE */
+/* ============================= */
+
+.footer-bg-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================= */
+/* FOOTER CHARACTER */
+/* ============================= */
+
+.footer-character {
+  position: absolute;
+  bottom: 0;            /* nakapatong sa footer bg */
+  left: 0.1%;             /* LEFT aligned */
+  width: 700px;         /* adjust size here */
+  max-width: 50vw;
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ============================= */
+/* LOGO + SOCIALS (CENTER) */
+/* ============================= */
+
+
+.footer-logo-center {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 400px;
+  max-width: 80vw;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ============================= */
+/* SOCIAL ICONS */
+/* ============================= */
+
+.footer-socials {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.footer-socials a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.footer-socials a:hover {
+  background: #ffffff;
+  color: #0b0620;
+}
+
+/* ============================= */
+/* RESPONSIVE (MOBILE)
+/* SAME BEHAVIOR AS DESKTOP */
+/* ============================= */
+
+@media (max-width: 768px) {
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .footer-exact {
+    position: relative;
+    min-height: 100vh;      /* 🔥 KEY: fills viewport */
+    width: 100%;
+    overflow: visible;
+  }
+
+  .footer-character {
+    margin-top: 50%;
+  }
+  .footer-logo {
+    display: none;
+  }
+
+
+  .footer-socials{
+    display: none;
+  }
+
+  .footer-bg-img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140%;            /* full bleed look */
+    height: auto;
+    margin: 0;
+  }
+}
+
+/* ============================= */
+/* FOOTER CONTACT DETAILS (RIGHT)
+/* ============================= */
+
+.footer-contact {
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-60%) translateX(-180px);
+  z-index: 3;
+}
+
+.footer-contact-img {
+  width: 320px;        /* adjust size */
+  max-width: 80vw;
+  height: auto;
+  display: block;
+}

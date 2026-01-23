@@ -1,0 +1,56 @@
+      /* Responsive image sizing for site assets */
+.shape {
+            position: absolute;
+            top: 195%;
+            left: 0;
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            z-index: 2; /* sits above carousel (z:0) and below overlay (z:2/10) */
+}
+.Circularbutton {
+            position: absolute;
+            top: 301%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: clamp(90px, 20vw, 250px);
+            height: auto;
+            display: block;
+            z-index: 2; /* sits above carousel (z:0) and below overlay (z:2/10) */
+}
+  .title {
+    position: relative; /* relative to body */
+    z-index: 10;       /* higher than background */
+    text-align: center;
+    margin: 850px auto;
+    top: 20%;           /* push it down a bit */
+
+  }
+
+  .title h2 {
+    font-size: 44px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font: 'Arial', sans-serif;
+  }
+
+  .title h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #ffffff;
+  }
+    .buttomtitle {
+    position: relative; /* relative to body */
+    z-index: 10;       /* higher than background */
+    text-align: center;
+    margin: -330px auto;
+    top: 20%;           /* push it down a bit */
+
+  }
+    .buttomtitle h1 {
+    font-size: 46px;
+    font-weight: 700;
+    color: #ffffff;
+  }
