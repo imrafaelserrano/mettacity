@@ -1,156 +1,251 @@
-  .fourth-section {
-    background-color: #fbf8ff; /* background */
-  }
-  /* Responsive image sizing for site assets */
-  .fourthtitle {
-    position: absolute;
-    top: 350%;
-    left: 0;
-    width: 100%;
-    display: block;
-    object-fit: cover;
-  }
+/* =========================
+   FOURTH SECTION BACKGROUND
+   ========================= */
+.fourth-section {
+  background-color: #fbf8ff;
+}
 
-  .fourthbody{
-    position: absolute;
-    top: 375%;
-    left: 0;
-    width: 100%;
-    display: block;
-    object-fit: cover;
-    z-index: 1;
-  }
+/* =========================
+   FOURTH SECTION TITLE IMAGE
+   ========================= */
+.fourthtitle {
+  position: absolute;
+  top: 350%;
+  left: 0;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
 
-  /* Centered row and column layout */
-  .row-fourth {
-    position: relative; /* allow normal flow */
-    top: auto;
-    left: auto;
-    width: 100%;
-    display: flex;
-    justify-content: center; /* center items horizontally */
-    align-items: center;
-    padding: 180px 130px 0 150px;
-    box-sizing: border-box;
-    flex-wrap: wrap;
-        z-index: 1;
+/* =========================
+   FOURTH SECTION BODY IMAGE
+   ========================= */
+.fourthbody {
+  position: absolute;
+  top: 375%;
+  left: 0;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  z-index: 1;
+}
 
-  }
+/* =========================
+   FOURTH SECTION MAIN ROW
+   ========================= */
+.row-fourth {
+  position: relative;            /* normal document flow */
+  width: 100%;
+  display: flex;
+  justify-content: center;       /* horizontal centering */
+  align-items: center;           /* vertical centering */
+  flex-wrap: wrap;
+  padding: 180px 130px 0 150px;
+  margin-top: -350px;            /* pull section upward */
+  box-sizing: border-box;
+  z-index: 1;
+}
 
-  .col { display:flex; align-items:center; justify-content:center; }
+/* =========================
+   COLUMN WRAPPER
+   ========================= */
+.col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .col img {
-    width: auto;
-    max-width: 100%;
-    height: 525px;
-    object-fit: cover;
-    display: block;
-    margin-top: 260%;
-    padding:10px;
-    transition: transform .2s ease, box-shadow .2s ease;
-  }
+/* =========================
+   IMAGE STYLING INSIDE COLUMNS
+   ========================= */
+.col img {
+  width: auto;
+  max-width: 100%;
+  height: 525px;
+  object-fit: cover;
+  display: block;
+  margin-top: 260%;
+  padding: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-  /* Hover pop effect */
-  .col img:hover { transform: translateY(-6px) scale(1.03);}
+/* Image hover pop effect */
+.col img:hover {
+  transform: translateY(-6px) scale(1.03);
+}
 
-  .row-title{
-    position: relative; /* allow normal flow */
-    align-items: left;
-    z-index: 2;
-    padding: 20px 0 100px 280px;
-  }
+/* =========================
+   FOURTH SECTION TITLE ROW
+   ========================= */
+.row-title {
+  position: relative;
+  z-index: 2;
+  padding: 20px 0 100px 160px;   /* left-aligned spacing */
+  margin-top: 60px;
+}
+
+/* =========================
+   TITLE TEXT STYLES
+   ========================= */
 .t1 {
   font-family: "Times New Roman", Times, serif;
   font-size: 30px;
 }
 
-  .t2{
-    font: italic 800 30px 'Poppins', sans-serif;
-        margin-top: -40px;
+.t2 {
+  font: italic 800 30px 'Poppins', sans-serif;
+  margin-top: -40px;
+}
 
-    }
-        /* Scrolling banner overlay */
-        .fourth-scrolling-banner-wrapper {
-            position: absolute;
-            top: 470%; /* adjust if you want it higher/lower */
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between; /* left and right flush */
-            z-index: 0; /* above carousel slides and background */
-            pointer-events: auto;
-            padding: 0; /* no space at edges */
-        }
-        /* Base banner styles (individual banners positioned left/right) */
-        .fourth-scrolling-banner {
-            max-width: 100%;
-            background: rgb(0, 0, 0);
-            color: #fff;
-            padding: 8px 16px;
-            overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-            position: static; /* use flex layout from wrapper */
-            top: auto;
-        }
+/* =========================
+   SCROLLING BANNER WRAPPER
+   ========================= */
+.fourth-scrolling-banner-wrapper {
+  position: absolute;
+  top: 475%;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: auto;
+}
 
-        .fourth-scrolling-banner.right {
-            right: 0;
-            width: 100%;
-            text-align: right;
-            position: absolute;
-            overflow: hidden;
-        }
+/* =========================
+   BASE SCROLLING BANNER
+   ========================= */
+.fourth-scrolling-banner {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 8px 0;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  position: relative;
+  white-space: nowrap;
+}
 
-        .fourth-scrolling-banner p { margin: 5px; font-weight: 600; letter-spacing: 1.5px; }
+/* Right-aligned banner (optional) */
+.fourth-scrolling-banner.right {
+  text-align: right;
+}
 
-        /* Make left and right banner text bolder for emphasis */
-        .fourth-scrolling-banner .fourth-rightbanner { font-weight: 800; }
+/* =========================
+   SCROLLING TRACK
+   ========================= */
+.fourth-scrolling-track {
+  display: inline-flex;
+  width: max-content;
+  animation: fourth-scroll-left-to-right 18s linear infinite;
+}
 
-        /* Highlight specific words in banners */
-        .fourth-scrolling-banner .play { color: #6f4cb2; font-weight: 700; font-style: italic; }
-        .fourth-scrolling-banner .culture { color: #63c5b4; font-weight: 700; font-style: italic; }
-        .fourth-scrolling-banner .technology { color: #fcc810; font-weight: 700; font-style: italic; }
+/* =========================
+   BANNER TEXT
+   ========================= */
+.fourth-scrolling-banner p {
+  margin: 5px 40px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
 
+/* Emphasized banner text */
+.fourth-scrolling-banner .fourth-rightbanner {
+  font-weight: 800;
+}
 
-  .core-message {
-      width: 98%;
-      height: 98%;
-      object-fit: cover; /* fills screen without stretching */
-      display: block;
-      margin: -30px auto; /* centers the image */
-      z-index:-3;
-    }
+/* Highlighted words */
+.fourth-scrolling-banner .play {
+  color: #6f4cb2;
+  font-weight: 700;
+  font-style: italic;
+}
 
-    .fifth-banner {
-      background: linear-gradient(90deg, #ddc4f1 0%, #f1e8fd 50%, #f4f4fe 100%);
-      padding-bottom: 200px;
+.fourth-scrolling-banner .culture {
+  color: #63c5b4;
+  font-weight: 700;
+  font-style: italic;
+}
 
+.fourth-scrolling-banner .technology {
+  color: #fcc810;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* =========================
+   KEYFRAMES (LEFT → RIGHT)
+   ========================= */
+@keyframes fourth-scroll-left-to-right {
+  0% {
+    transform: translateX(-50%);
   }
-    .fifthcontent {
-    position: relative; /* relative to body */
-    z-index: 10;       /* higher than background */
-    text-align: center;
-    margin: 150px auto;
+  100% {
+    transform: translateX(0);
   }
+}
 
-  .fifthcontent h2 {
-    font-size: 34px;
-    font-weight: 400;
-    margin-bottom: 10px;
-    color: #1a1a1a;
-    font: 'Arial', sans-serif;
-  }
+/* =========================
+   CORE MESSAGE IMAGE
+   ========================= */
+.core-message {
+  width: 98%;
+  height: 98%;
+  object-fit: cover;
+  display: block;
+  margin: -30px auto;
+  z-index: -3;
+}
 
-  .fifthbanner h1 {
-    font-size: 56px;
-    font-weight: 700;
-    margin-bottom: 30px;
-    color: #1a0f47;
-  }
-    .fifthenter-button {
+/* =========================
+   FIFTH SECTION BACKGROUND
+   ========================= */
+.fifth-banner {
+  background: linear-gradient(
+    90deg,
+    #ddc4f1 0%,
+    #f1e8fd 50%,
+    #f4f4fe 100%
+  );
+  padding-bottom: 200px;
+  margin-top: -70px;
+}
 
-        width: 250px;
-        height: auto;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-    }
+/* =========================
+   FIFTH SECTION CONTENT
+   ========================= */
+.fifthcontent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  margin: 150px auto;
+}
+
+/* Fifth section subtitle */
+.fifthcontent h2 {
+  font-size: 48px;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+  font-family: "Times New Roman", Times, serif;
+}
+
+
+/* Fifth section main heading */
+.fifthcontent h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-top: -15px;     /* moves text up slightly */
+  margin-bottom: 40px;
+  color: #030016;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* =========================
+   FIFTH SECTION BUTTON
+   ========================= */
+.fifthenter-button {
+  width: 250px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-bottom: -10px;
+}
