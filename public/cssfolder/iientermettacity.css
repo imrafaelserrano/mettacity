@@ -169,13 +169,13 @@
   width: 100%;
   min-height: 100vh;                 /* at least full screen */
   height: auto;                      /* grows with content */
-  background-image: url("header-menu-carousel/ENTER_METTACITY.png");
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
   /* Ensure padding-bottom is 0 so the footer image touches the edge */
   padding: 80px 0 0 0;         /* top spacing + bottom spacing */
 }
+
 
 /* title wrapper (controls fit) */
 .main-title-box{
@@ -637,7 +637,7 @@
   @media (max-width: 768px) {
   /* Use the image as a stretched background on mobile */
   .stretch-bg {
-    background-image: url("BG.png");
+    background-image: url("II_ENTERMETTACITY/BG.png");
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;

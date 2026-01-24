@@ -51,7 +51,7 @@
 </section>
 
 <!-- MAIN BACKGROUND SECTION -->
-<section class="main-bg-section">
+<section class="main-bg-section" style="background-image: url('{{ asset('./assets/II_ENTERMETTACITY/ENTER_METTACITY.png') }}');">
   <div class="zones-wrap">
 
     <!-- MAIN TITLE -->
