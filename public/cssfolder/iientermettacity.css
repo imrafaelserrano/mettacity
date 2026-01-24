@@ -1,0 +1,753 @@
+/* =========================
+   HERO SECTION (NO GAP)
+========================= */
+.hero-wrapper{
+  position: relative;
+  width: 100%;
+
+  /* FULL SCREEN */
+  height: 100vh;
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+
+  overflow: hidden;
+}
+
+/* VIDEO FULL BACKGROUND */
+.hero-video{
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;     /* 👈 SAME AS BACKGROUND-SIZE: COVER */
+  object-position: center;
+
+  z-index: 1;
+}
+
+/* CONTENT ABOVE VIDEO */
+.hero-content{
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Dark overlay */
+.hero-wrapper::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  
+  z-index: 1;
+}
+
+/* Hero content */
+.hero-content{
+  position: relative;
+  z-index: 2;
+
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  padding: 0 16px;
+  color: #fff;
+}
+.hero-content h1{
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.hero-content p{
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px){
+  .hero-wrapper{
+    background-position: center top; /* better crop on phones */
+    background-image: url("VIDEO\ (Placeholder\).png");
+  }
+
+  .hero-content{
+    padding: 0 14px;
+  }
+
+  .hero-content h1{
+    font-size: 40px;
+    line-height: 1.1;
+  }
+
+  .hero-content p{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 420px){
+  .hero-content h1{
+    font-size: 32px;
+  }
+}
+
+/* CENTERED LOGO */
+.mobile-menu-logo{
+  height: 36px;        /* adjust size here */
+  width: auto;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: block;
+}
+
+/* =========================
+   CONTINUOUS MARQUEE (NO CUT)
+========================= */
+.marquee-strip{
+  width: 100%;
+  overflow: hidden;
+  background: #05002b;
+  font-style: italic;
+}
+
+.marquee-viewport{
+  overflow: hidden;
+}
+
+/* moving belt */
+.marquee-track{
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marqueeMove var(--marquee-duration, 14s) linear infinite;
+}
+
+/* one set (will be cloned by JS) */
+.marquee-set{
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 14px 28px;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+/* colors like your image */
+.play{ color: #9b7bff; font-weight: 800; letter-spacing: 2px; font-size: 14px; }
+.culture{ color: #5fd3c6; font-weight: 800; letter-spacing: 2px; font-size: 14px; }
+.tech{ color: #ffe600; font-weight: 800; letter-spacing: 2px; font-size: 14px; }
+.dot{ color: #fff; font-weight: 900; font-size: 16px; }
+
+/* JS sets --marquee-distance to exact px width of one set */
+@keyframes marqueeMove{
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-1 * var(--marquee-distance, 500px))); }
+}
+
+
+/* =========================
+   MAIN BACKGROUND SECTION
+========================= */
+.main-bg-section{
+  width: 100%;
+  min-height: 100vh;                 /* at least full screen */
+  height: auto;                      /* grows with content */
+  background-image: url("header-menu-carousel/ENTER_METTACITY.png");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  /* Ensure padding-bottom is 0 so the footer image touches the edge */
+  padding: 80px 0 0 0;         /* top spacing + bottom spacing */
+}
+
+/* title wrapper (controls fit) */
+.main-title-box{
+  width: 100%;
+  max-width: 1200px;          /* adjust if you want smaller/bigger */
+  padding: 0 16px;            /* safe padding on both sides */
+  margin: 0 auto;             /* center */
+}
+
+/* title image always fits inside wrapper */
+.main-title-img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px){
+  .main-title-img{
+    max-width: 95%;
+  }
+}
+
+/* STACKED LIST */
+.zones-list{
+  width: 100%;
+  margin-top: 34px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+}
+
+/* CARD */
+.zone-card{
+  width: min(920px, 94vw);
+  display: block;
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  text-decoration: none;
+
+  transition: transform .25s ease, filter .25s ease;
+}
+
+.zone-card img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* hover */
+.zone-card:hover{
+  transform: translateY(-6px) scale(1.01);
+  filter: drop-shadow(0 18px 30px rgba(0,0,0,.25));
+}
+
+/* COLOR RIBBON (bottom strip) */
+.zone-card::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 16%;
+}
+
+/* ribbon colors */
+.zone-purple::after{ 
+   content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 18%;
+  width: 100%;
+  z-index: 2;
+  padding: 10px ;
+  border-radius: 0 0 60px 0;
+  background: #6f56c9; 
+  clip-path: polygon(70.6% 100%, 100% 100%, 100% 45.5%, 14.64% 50%, 
+  9.51% 0%, 0% 0%, 0.11% 100%, 29.18% 100%);
+}
+
+.zone-teal::after{ 
+   content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 18%;
+  width: 100%;
+  z-index: 2;
+  padding: 10px ;
+  border-radius: 0 0 50px 60px;
+  background-color: #5fd3c6;
+  clip-path: polygon(100% 100%, 100% 0%, 76.86% 0%, 
+  71.27% 50%, 38.43% 50%, 0% 46.16%, 0% 100%);
+
+}
+.zone-yellow::after{
+ content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 20%;                 /* ribbon thickness */
+  z-index: 3;
+  background: #f3c623;         /* the yellow in your screenshot */
+  padding: 15px;
+  /* keep rounded bottom corners (same as card) */
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 60px;
+
+  /* shape: left diagonal + right step/notch */
+  clip-path: polygon(
+     0% 0%,        /* top-left */
+    20% 0%,       /* flat start */
+    25% 40%,      /* left diagonal down */
+    80% 40%,      /* long flat middle */
+    83% 69%,       /* ✅ right diagonal up/down */
+    100% 65%,      /* top-right */
+    100% 100%,    /* bottom-right */
+    0% 100%       /* bottom-left */
+  );
+
+}
+
+
+.zone-pink::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 22%;
+  background: #e149a6;
+
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
+
+  clip-path: polygon(
+    0% 30%,
+    72% 30%,
+    76% 0%,
+    90% 0%,
+    94% 30%,
+    100% 30%,
+    100% 100%,
+    0% 100%
+  );
+
+  z-index: 5; /* ✅ stays on top always */
+}
+
+/* Overlay hidden by default */
+.zone-pink .zone-full-overlay{
+  position: absolute;
+  inset: 0;
+  z-index: 3;               /* below ribbon */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  padding: 22px;
+  color: #fff;
+  background: rgba(0,0,0,.55);
+
+  opacity: 0;
+  pointer-events: none;     /* ✅ don't block taps when hidden */
+  transition: opacity .25s ease;
+}
+
+/* overlay hidden by default */
+.zone-pink .zone-full-overlay{
+  position: absolute;
+  inset: 0;
+  z-index: 3;                 /* below ribbon */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  padding: 22px;
+  color: #fff;
+  background: rgba(0,0,0,.55);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+
+/* ✅ DESKTOP HOVER (bring back) */
+@media (hover: hover) and (pointer: fine){
+  .zone-pink:hover .zone-full-overlay{
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* ✅ MOBILE TAP (is-active) */
+.zone-pink.is-active .zone-full-overlay{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* text animation */
+.zone-pink .zone-title,
+.zone-pink .zone-desc{
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+/* show text on hover (desktop) */
+@media (hover: hover) and (pointer: fine){
+  .zone-pink:hover .zone-title,
+  .zone-pink:hover .zone-desc{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* show text on tap (mobile) */
+.zone-pink.is-active .zone-title,
+.zone-pink.is-active .zone-desc{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* keep ribbon always visible */
+.zone-pink::after{
+  z-index: 5;
+}
+/* ====ZONE PINK END=== */
+
+
+/* ensure cards can stack layers */
+.zone-card{
+  position: relative;
+  overflow: hidden;
+}
+
+/* overlay hidden by default */
+.zone-card.has-overlay .zone-full-overlay{
+  position: absolute;
+  inset: 0;
+  z-index: 2; /* overlay above image */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  padding: 22px;
+  color: #fff;
+  background: rgba(0,0,0,.55);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+
+/* desktop hover (real hover devices only) */
+@media (hover: hover) and (pointer: fine){
+  .zone-card.has-overlay:hover .zone-full-overlay{
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* mobile tap state */
+.zone-card.has-overlay.is-active .zone-full-overlay{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* text animation */
+.zone-title,
+.zone-desc{
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+@media (hover: hover) and (pointer: fine){
+  .zone-card.has-overlay:hover .zone-title,
+  .zone-card.has-overlay:hover .zone-desc{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.zone-card.has-overlay.is-active .zone-title,
+.zone-card.has-overlay.is-active .zone-desc{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* keep ribbon always on top of overlay */
+.zone-purple::after,
+.zone-teal::after,
+.zone-yellow::after{
+  z-index: 5;
+}
+
+
+/* mobile rounding a bit smaller */
+@media (max-width: 768px){
+  .zone-card{ border-radius: 22px; }
+}
+
+@media (max-width: 768px){
+
+  .main-bg-section{
+    padding: 48px 12px 64px;      /* less padding for phone */
+    background-position: center top;
+  }
+
+  .main-title-box{
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .main-title-img{
+    width: 100%;
+  }
+
+  .zones-list{
+    margin-top: 22px;
+    gap: 18px;
+  }
+
+  .zone-card{
+    width: 100%;                  /* full width inside padding */
+    max-width: 560px;             /* keeps it nice */
+    border-radius: 18px;
+  }
+
+  .zone-card::after{
+    height: 18%;                  /* ribbon a bit thicker on mobile */
+  }
+}
+
+
+
+/* ACTIVTIES */
+
+
+  /* SECTION WRAPPER */
+ /* ✅ section */
+  .feature-exact {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* ✅ background wrapper defines the background area */
+  .bg-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  /* ✅ desktop: exact image (no crop) */
+  .bg-exact-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ✅ overlay sits inside image area */
+  .feature-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-start;          /* vertical center */
+    padding: 0 5vw;
+    box-sizing: border-box;
+    
+  }
+
+  /* ✅ row dividers */
+  .feature-row {
+    padding: clamp(12px, 2.2vw, 26px) 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+  }
+  .feature-row:last-child { border-bottom: none; }
+
+  /* ✅ pills (reduced + contained) */
+  .pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+   transition: background-color .25s ease, color .25s ease, transform .2s ease;
+  background: #0b0e1e;
+  color: #fff;
+  /* big height + big left/right space */
+  padding: clamp(20px, 2.2vw, 15px) clamp(20px, 2vw, 50px);
+  border-radius: 999px;
+  font-weight: 800;
+  font-style: italic;
+  /* big text */
+  font-size: clamp(20px, 3vw, 25px);
+  line-height: 1.1;
+  width: fit-content;   /* keeps each pill sized to the text */
+  max-width: 100%;      /* prevents overflow */
+  white-space: nowrap;  /* one line on desktop */
+  }
+  /* Hover state */
+.pill:hover{
+  background-color: #ffd400; /* yellow */
+  color: #fff;               /* white text */
+}
+
+/* Make sure text inside stays white too */
+.pill:hover .pill-text{
+  color: #fff;
+}
+
+/* icon box (bigger like the reference) */
+.pill-icon{
+  width: clamp(26px, 2.6vw, 38px);
+  height: clamp(26px, 2.6vw, 38px);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* arrow size */
+.pill-icon img{
+  width: clamp(18px, 2vw, 28px);
+  margin-top: -10px;
+  height: auto;
+  display: block;
+
+  /* if your Arrow.png is NOT white, uncomment next line */
+  /* filter: brightness(0) invert(1); */
+}
+
+  /* ✅ right text */
+  .feature-text {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(10px, 1.8vw, 22px);
+    line-height: 1.35;
+  }
+
+  /* ✅ reduce gutter spacing between columns */
+  .feature-row > [class*="col-"] {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* ✅ MOBILE: stretch bottom of background */
+  @media (max-width: 768px) {
+  /* Use the image as a stretched background on mobile */
+  .stretch-bg {
+    background-image: url("BG.png");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+
+    min-height: 150vh; /* increase if you want more bottom stretch */
+  }
+
+  /* Hide the <img> on mobile (background replaces it) */
+  .stretch-bg .bg-exact-img {
+    display: none;
+  }
+
+  /* ✅ Center the whole content block inside the background */
+  .feature-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;        /* ✅ vertical center */
+    justify-content: center;    /* ✅ horizontal center */
+
+    padding: 4vw;
+  }
+
+  /* ✅ Center each row’s content when stacked */
+  .feature-row {
+    text-align: center;
+    padding: 5px 0;
+  }
+
+  /* Center the pill column */
+  .feature-row > div:first-child {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Center the text column */
+  .feature-row > div:last-child {
+    display: flex;
+    justify-content: center;
+  }
+
+  .feature-text {
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  /* Allow long pill text to wrap on small screens */
+  .pill {
+    white-space: normal;
+    justify-content: center;
+    width: fit-content;  /* or: auto */
+    max-width: 95%;   
+  }
+}
+
+
+/* ============================= */
+/* STATEMENT SECTION – TRUE CENTER */
+/* ============================= */
+
+.statement-section {
+  position: relative;
+  z-index: 4;
+  padding-top: 120px;
+  padding-bottom: 220px;
+  background: transparent;
+}
+
+/* 🔥 REMOVE BOOTSTRAP SIDE OFFSET */
+.statement-container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* CENTER WRAPPER */
+.statement-inner {
+  max-width: 1100px;       /* wider = better optical center */
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* EYEBROW */
+.statement-eyebrow {
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* 🔑 TRUE OPTICAL CENTER HEADING */
+.statement-heading {
+  display: inline-block;   /* shrink to text width */
+  white-space: nowrap;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  /* 🔥 OPTICAL ADJUSTMENT */
+  transform: translateX(-1px);
+}
+
+
+/* ============================= */
+/* MOBILE FIX */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .statement-heading {
+    white-space: normal;   /* allow wrap sa mobile */
+    transform: none;
+  }
+}
