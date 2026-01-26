@@ -1,25 +1,28 @@
-      /* Responsive image sizing for site assets */
-.shape {
-            position: absolute;
-            top: 195%;
-            left: 0;
-            width: 100%;
-            display: block;
-            object-fit: cover;
-            z-index: 2; /* sits above carousel (z:0) and below overlay (z:2/10) */
+/* ===================== */
+/* SECTION CONTAINER */
+/* ===================== */
+
+.third-section {
+  position: relative;
+  width: 100%;
+  overflow: visible;
 }
+
+/* ===================== */
+/* TITLE */
+/* ===================== */
 
 .thirdtitle {
   position: relative;
   z-index: 10;
   text-align: center;
-  margin: -100px auto 0; /* controls vertical position cleanly */
+  margin: -100px auto 0;
 }
 
 .thirdtitle h2 {
   font-size: 50px;
   margin-bottom: 10px;
-  color: #ffffff;
+  color: #fff;
   font-family: "Times New Roman", Times, serif;
 }
 
@@ -27,108 +30,193 @@
   font-size: 45px;
   font-weight: bold;
   margin-bottom: 30px;
-  color: #ffffff;
+  color: #fff;
   font-family: 'Poppins', sans-serif;
 }
 
-.thirdbottomtitle {
+/* ===================== */
+/* CAROUSEL WRAPPER */
+/* ===================== */
+
+.third-wrapper {
   position: relative;
-  z-index: 10;
+  isolation: isolate;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;              /* ✅ CENTERED */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 0 16px;
+  z-index: 5;
+}
+
+.third-carousel {
+  position: relative;
+  width: 100%;
+  height: 520px;
+}
+
+/* ===================== */
+/* STACK & CARDS */
+/* ===================== */
+
+.third-stack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.third-card {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform-origin: bottom center;
+  transition: transform 0.6s ease;
+}
+
+.third-card img {
+  display: block;
+  max-width: 620px;
+  max-height: 720px;
+  width: 100%;
+  height: auto;
+}
+
+/* CENTER — elevated */
+.third-active {
+  transform: translate(-50%, -45%) rotate(0deg) scale(1);
+  z-index: 7;
+}
+
+/* INNER SIDES — slightly lower */
+.third-left1 {
+  transform: translate(-85%, -45%) rotate(-22deg) scale(0.96);
+  z-index: 5;
+}
+
+.third-right1 {
+  transform: translate(-15%, -45%) rotate(22deg) scale(0.96);
+  z-index: 5;
+}
+
+/* OUTER SIDES — lowest */
+.third-left2 {
+  transform: translate(-130%, -35%) rotate(-40deg) scale(0.88);
+  z-index: 4;
+}
+
+.third-right2 {
+  transform: translate(30%, -35%) rotate(40deg) scale(0.88);
+  z-index: 4;
+}
+
+
+
+
+/* ===================== */
+/* NAV */
+/* ===================== */
+
+.third-nav {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.third-prev { left: -500px; }
+.third-next { right: -500px; }
+
+/* ===================== */
+/* CAPTION & DOTS */
+/* ===================== */
+
+.third-caption {
+  font-size: 20px;
+  font-weight: 600;
   text-align: center;
-  margin: 450px auto 0; /* spacing below thirdtitle */
+  color: #fff;
+  margin-top: -50px;
 }
 
-.thirdbottomtitle h1 {
-  font-size: 46px;
-  font-weight: bold;
-  color: #ffffff;
-  font-family: 'Poppins', sans-serif;
+.third-indicators {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 50px;
+
 }
 
+.third-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.third-dot.third-active-dot {
+  background: #fff;
+  transform: scale(1.3);
+}
+
+/* ===================== */
+/* SHAPE & BUTTON */
+/* ===================== */
+
+.shape {
+  position: absolute;
+  top: -35%;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
 
 .Circularbutton {
   position: absolute;
-  top: 301%;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  
-  width: clamp(90px, 20vw, 250px); /* responsive width */
-  height: auto;
-  
-  display: block;
-  z-index: 2; /* sits above carousel and below overlay */
-  
-  border-radius: 50%; /* make circular */
-  
-  /* Rotation */
+  width: clamp(90px, 20vw, 250px);
   animation: rotateClockwise 4s linear infinite;
+  z-index: 2;
 }
 
-/* Keyframes for clockwise rotation */
 @keyframes rotateClockwise {
-  from {
-    transform: translateX(-50%) rotate(0deg);
-  }
-  to {
-    transform: translateX(-50%) rotate(360deg);
-  }
-}
-@media (min-width: 375px) and (max-width: 425px) {
-  .shape {
-    top: 109%;
-    left: -5%;
-    width: 110%;
-  }
-  .thirdtitle {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  margin: -150px auto 0; /* controls vertical position cleanly */
+  from { transform: translateX(-50%) rotate(0deg); }
+  to   { transform: translateX(-50%) rotate(360deg); }
 }
 
-.thirdtitle h2 {
-  font-size: 15px;
-  margin-bottom: 10px;
-  color: #ffffff;
-  font-family: "Times New Roman", Times, serif;
+/* ===================== */
+/* MOBILE */
+/* ===================== */
+
+@media (max-width: 425px) {
+  .third-carousel { height: 420px; }
+  .third-card img { max-width: 240px; max-height: 320px; }
+  .third-prev { left: 8px; }
+  .third-next { right: 8px; }
+  .thirdtitle h2 { font-size: 15px; }
+  .thirdtitle h1 { font-size: 12px; }
 }
 
-.thirdtitle h1 {
-  font-size: 12px;
-  font-weight: bold;
-  margin-bottom: 30px;
-  color: #ffffff;
-  font-family: 'Poppins', sans-serif;
+@media (max-width: 375px) {
+  .third-carousel { height: 380px; }
+  .third-card img { max-width: 220px; max-height: 300px; }
 }
 
-.thirdbottomtitle {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  margin: 100px auto 0; /* spacing below thirdtitle */
-}
-
-.thirdbottomtitle h1 {
-  font-size: 10px;
-  font-weight: bold;
-  color: #ffffff;
-  font-family: 'Poppins', sans-serif;
-}
-.Circularbutton {
-  position: absolute;
-  top: 138%;
-  left: 50%;
-  transform: translateX(-50%);
-  
-  width: 60px;
-  height: auto;
-  
-  display: block;
-  z-index: 2; /* sits above carousel and below overlay */
-  
-  border-radius: 50%; /* make circular */
-  
-  /* Rotation */
-  animation: rotateClockwise 4s linear infinite;
-}
+@media (max-width: 320px) {
+  .third-carousel { height: 340px; }
+  .third-card img { max-width: 200px; max-height: 260px; }
 }
