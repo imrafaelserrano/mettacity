@@ -250,9 +250,93 @@
   transition: transform 0.3s ease;
   margin-bottom: -10px;
 }
+.mobile-break {
+  display: none;
+}
+.row-fourth-mobile {
+  display: none;
+}
+.stepinsidebgmobile{
+  display: none;
+}
 
-@media (min-width: 375px) and (max-width: 425px) {
+@media (max-width: 425px) {
   .fourthtitle {
   top: 150%;
+  }
+  .row-title{
+    padding: 20px 0 100px 20px;
+    top: -1550px;
+  }
+  .mobile-break {
+    display: inline;
+  }
+  .t1 {
+    font-size: 20px;
+  }
+  .t2 {
+    font-size: 24px;
+    position: relative;
+    top: 5px;
+  }
+  .row-fourth{
+    display: none;
+  }
+  .fourthbody {
+    display: none;
+  }
+/* ================================
+   STEP INSIDE BACKGROUND (MOBILE)
+   ================================ */
+.stepinsidebgmobile {
+  display: block;
+  position: absolute;
+  top: 158%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1; /* background layer */
 }
+
+/* ================================
+   ROW FOURTH IMAGES (ON TOP)
+   ================================ */
+.row-fourth-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  top: -250px;
+  position: relative; /* REQUIRED for z-index */
+  z-index: 10;        /* above background */
+}
+
+.row-fourth-mobile .col {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.row-fourth-mobile img {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+#entermettacitym {
+  display: block;
+  width: auto;
+  height: 50px;
+  margin-top: 15px;
+}
+
+
+
 }

@@ -1,6 +1,7 @@
 <div class="fourth-section">
     <img src="{{ asset('assets/TITLE.png') }}" alt="Fourth Section Title" class="fourthtitle">
     <img src="{{ asset('assets/STEP INSIDE.png') }}" alt="Fourth Section Body" class="fourthbody">
+    <img src="{{ asset('assets/STEP INSIDE BG.png') }}" alt="Step Inside BG" class="stepinsidebgmobile">
 
     <div class="row-fourth">
       <div class="col">
@@ -17,9 +18,24 @@
       </div>
     </div>
 
+      <div class="row-fourth-mobile">
+        <div class="col">
+          <img src="{{ asset('assets/1. TECHNOLOGY.png') }}" alt="TECHNOLOGY" class="techologym">
+        </div>
+        <div class="col">
+          <img src="{{ asset('assets/2. PLAY.png') }}" alt="PLAY" class="playm"> 
+        </div>
+        <div class="col">
+          <img src="{{ asset('assets/3. CULTURE.png') }}" alt="CULTURE" class="culturem">
+        </div>
+        <div class="col">
+          <img src="{{ asset('assets/ENTER BUTTON.png') }}" alt="ENTER METTACITY" id="entermettacitym">
+        </div>
+      </div>
+
     <div class="row-title">
       <div class="col-sm-9 p-3 t1">
-        An immersive universe where you don't just watch the experience—
+        An immersive universe <br class="mobile-break">where you don't just watch the experience—
       </div>
       <div class="col-sm-9 p-3 t2">
         YOU BECOME PART OF IT!
