@@ -46,7 +46,7 @@
 
         <!-- DESKTOP: CTA + SOCIAL -->
         <div class="col-4 d-none d-md-flex align-items-center justify-content-end gap-3 pe-4">
-          <img src="{{ asset('./assets/PLAN YOUR VISIT.png') }}" class="plan-visit-img" alt="Plan Your Visit">
+          <a class="nav-link active" href="{{ route('visit') }}"><img src="{{ asset('./assets/PLAN YOUR VISIT.png') }}" class="plan-visit-img" alt="Plan Your Visit"></a>
 
           <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>

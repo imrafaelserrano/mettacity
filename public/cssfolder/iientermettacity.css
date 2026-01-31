@@ -718,8 +718,8 @@ html, body{
 .statement-section {
   position: relative;
   z-index: 4;
-  padding-top: 150px;
-  padding-bottom: 220px;
+  padding-top: 20px;
+  padding-bottom: 300px;
   background: transparent;
   opacity: 0;
   transform: translateY(-40px); /* fade DOWN */

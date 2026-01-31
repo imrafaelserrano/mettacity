@@ -13,3 +13,7 @@ Route::get('/enter-metta-city', function () {
 Route::get('/ticketing', function () {
     return view('iiiticketing');
 })->name('ticketing');
+
+Route::get('/plan-your-visit', function () {
+    return view('ivplanvisit');
+})->name('visit');
