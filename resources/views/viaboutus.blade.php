@@ -12,13 +12,13 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="{{ asset('cssfolder/vaboutus.css') }}">
+  <link rel="stylesheet" href="{{ asset('cssfolder/viaboutus.css') }}">
   <link rel="stylesheet" href="{{ asset('cssfolder/navbar.css') }}">
   <link rel="stylesheet" href="{{ asset('cssfolder/footer.css') }}">
 
 </head>
 
-<body style="background-image: url('{{ asset('./assets/V_ABOUTUS/FAQS_BG.png')}}');">
+<body style="background-image: url('{{ asset('./assets/VI_ABOUTUS/FAQS_BG.png')}}');">
     
 @include('navbar')
 
@@ -27,13 +27,13 @@
 
   <div class="sticky-grid">
     <img
-      src="{{ asset('./assets/V_ABOUTUS/about_bg.png') }}" 
+      src="{{ asset('./assets/VI_ABOUTUS/about_bg.png') }}" 
       alt="Grid background"
       class="plan-bg"/>
 
     <div class="grid-title fade-down">
       <img
-        src="{{ asset('./assets/V_ABOUTUS/abouttitle.png') }}"
+        src="{{ asset('./assets/VI_ABOUTUS/abouttitle.png') }}"
         alt="Frequently Asked Questions"/>
     </div>
   </div>
@@ -43,7 +43,7 @@
 <section class="reel-section">
   <div class="reel-container">
     <img
-      src="{{ asset('./assets/V_ABOUTUS/REEL.png') }}"
+      src="{{ asset('./assets/VI_ABOUTUS/REEL.png') }}"
       alt="Experience Reel"
       class="reel-image">
   </div>
@@ -55,7 +55,7 @@
 <section class="about-mettacity-section"> 
   <div class="container">
     <div class="about-mettacity-header">
-      <img src="{{ asset('./assets/V_ABOUTUS/aboutlogo.png') }}" alt="About Mettacity" />
+      <img src="{{ asset('./assets/VI_ABOUTUS/aboutlogo.png') }}" alt="About Mettacity" />
     </div>
 <div class="about-mettacity-content">
   <div class="about-text-block">
@@ -72,27 +72,27 @@
   </div>
         <div class="mettacity-features">
           <div class="feature-card">
-            <img src="{{ asset('./assets/V_ABOUTUS/icon1.png') }}" alt="City">
+            <img src="{{ asset('./assets/VI_ABOUTUS/icon1.png') }}" alt="City">
             <p>It’s a city<br>you can play in.</p>
           </div>
 
           <div class="feature-card">
-            <img src="{{ asset('./assets/V_ABOUTUS/icon2.png') }}" alt="Universe">
+            <img src="{{ asset('./assets/VI_ABOUTUS/icon2.png') }}" alt="Universe">
             <p>A universe<br>that responds to you.</p>
           </div>
 
           <div class="feature-card">
-            <img src="{{ asset('./assets/V_ABOUTUS/icon3.png') }}" alt="Rocket">
+            <img src="{{ asset('./assets/VI_ABOUTUS/icon3.png') }}" alt="Rocket">
             <p>A space where<br>every visit feels new.</p>
           </div>
 
           <div class="feature-card">
-            <img src="{{ asset('./assets/V_ABOUTUS/icon4.png') }}" alt="Experience">
+            <img src="{{ asset('./assets/VI_ABOUTUS/icon4.png') }}" alt="Experience">
             <p>No screens<br>to just stare at.</p>
           </div>
         </div>
         <div class="mettacity-tagline">
-          <img src="{{ asset('./assets/V_ABOUTUS/tagline.png') }}" alt="Come play. Share. Capture. Repeat.">
+          <img src="{{ asset('./assets/VI_ABOUTUS/tagline.png') }}" alt="Come play. Share. Capture. Repeat.">
         </div>
 </section>
 
@@ -120,7 +120,7 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="{{ asset('jsfolder/vaboutus.js') }}"></script>
+  <script src="{{ asset('jsfolder/viaboutus.js') }}"></script>
 
 </body>
 </html>
