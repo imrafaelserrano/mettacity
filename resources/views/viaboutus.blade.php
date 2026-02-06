@@ -109,7 +109,7 @@
               <h2 class="statement-heading">
                 Where Culture, Play, and Technology Meet
               </h2>
-            <img src="{{ asset('./assets/PLAN YOUR VISIT.png') }}" alt="Enter Button" class="enter-button">
+            <a href="{{ route('visit') }}"><img src="{{ asset('./assets/PLAN YOUR VISIT.png') }}" alt="Enter Button" class="enter-button"></a>
             </div>
           </div>
         </section>
