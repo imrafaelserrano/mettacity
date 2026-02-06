@@ -1,164 +1,173 @@
-        .carouselslide {
-            position: absolute;
-            top: 12%;
-            left: 0;
-            width: 100%;
-            z-index: 0; /* place behind the image wrapper */            opacity: 1;
-            transition: top 10s ease, opacity 0.6s ease, transform 0.6s ease;
-            will-change: top, opacity, transform;        
-        }
-                /* Static image overlaying the carousel */
-        .carousel-background {
-            position: absolute;
-            top: 88.5%;
-            left: 0;
-            width: 100%;
-            display: block;
-            object-fit: cover;
-            z-index: 2; /* sits above carousel (z:0) and below overlay (z:2/10) */
-            pointer-events: none; /* allow clicks to pass through to controls */
-            opacity: 1;
-            transition: opacity 0.6s ease, transform 0.6s ease;
-            will-change: opacity, transform;
-        }
+.carouselslide {
+    position: absolute;
+    top: 12%;
+    left: 0;
+    width: 100%;
+    z-index: 0; /* place behind the image wrapper */
+    opacity: 1;
+    transition: top 10s ease, opacity 0.6s ease, transform 0.6s ease;
+    will-change: top, opacity, transform;
+}
 
-        /* Style carousel indicators: center them and make 0,1,3,4 circular while middle (2) is a pill */
-        .carousel-indicators {
-            display: flex;
-            align-items: center; /* vertical center all buttons */
-            justify-content: center;
-            gap: 12px; /* spacing between indicators */
-            padding: 0;
-            margin: 0;
-            transform: translateY(-50px); /* nudge indicators slightly upward */
-            transition: transform 0.25s ease;
-        }
+/* Static image overlaying the carousel */
+.carousel-background {
+    position: absolute;
+    top: 88.5%;
+    left: 0;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    z-index: 2; /* sits above carousel (z:0) and below overlay (z:2/10) */
+    pointer-events: none; /* allow clicks to pass through to controls */
+    opacity: 1;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    will-change: opacity, transform;
+}
 
-        .carousel-indicators button {
-            padding: 0;
-            margin: 0;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            vertical-align: middle;
-        }
+/* Style carousel indicators */
+.carousel-indicators {
+    display: flex;
+    align-items: center; /* vertical center all buttons */
+    justify-content: center;
+    gap: 12px; /* spacing between indicators */
+    padding: 0;
+    margin: 0;
+    transform: translateY(-50px); /* nudge indicators slightly upward */
+    transition: transform 0.25s ease;
+}
 
-        .carousel-indicators button:nth-child(1),
-        .carousel-indicators button:nth-child(2),
-        .carousel-indicators button:nth-child(4),
-        .carousel-indicators button:nth-child(5) {
-            width: 12px;
-            height: 12px;
-            padding: 0;
-            border-radius: 50%;
-            background-color: rgba(255,255,255,0.85);
-            border: none;
-            transition: transform 0.25s ease, opacity 0.25s ease;
-            box-shadow: none;
-        }
+.carousel-indicators button {
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
 
-        /* Middle indicator stays a wider pill with fully rounded ends */
-        .carousel-indicators button:nth-child(3) {
-            width: 100px;
-            height: 12px;
-            padding: 0;
-            border-radius: 20px; /* fully rounded pill */
-            background-color: #ffffff;
-            opacity: 1;
-            box-shadow: none;
-            transition: width 0.3s ease, transform 0.25s ease, opacity 0.25s ease;
-        }
+.carousel-indicators button:nth-child(1),
+.carousel-indicators button:nth-child(2),
+.carousel-indicators button:nth-child(4),
+.carousel-indicators button:nth-child(5) {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.85);
+    border: none;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    box-shadow: none;
+}
 
-        /* Slightly smaller when not active, grows when active */
-        .carousel-indicators button:nth-child(3):not(.active) {
-            width: 100px;
-            background-color: rgba(255, 255, 255, 0.7);
-        }
-        .carousel-indicators button:nth-child(3).active {
-            width: 100px;
-            transform: scale(1.03);
-            background-color: #ffffff;
-        }
+/* Middle indicator stays a wider pill */
+.carousel-indicators button:nth-child(3) {
+    width: 100px;
+    height: 12px;
+    padding: 0;
+    border-radius: 20px;
+    background-color: #ffffff;
+    opacity: 1;
+    box-shadow: none;
+    transition: width 0.3s ease, transform 0.25s ease, opacity 0.25s ease;
+}
 
-        /* Small adjustments for accessibility and focus */
-        .carousel-indicators button:focus { outline: none; box-shadow: 0 0 0 0.18rem rgba(99,197,180,0.25); }
+/* Slightly smaller when not active */
+.carousel-indicators button:nth-child(3):not(.active) {
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
 
-        .MB1, .MB2 {
-            display: none !important;
-        }
+.carousel-indicators button:nth-child(3).active {
+    width: 100px;
+    transform: scale(1.03);
+    background-color: #ffffff;
+}
 
-        /*MOBILE*/
+/* Accessibility focus */
+.carousel-indicators button:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.18rem rgba(99,197,180,0.25);
+}
 
+.MB1, .MB2 {
+    display: none !important;
+}
+
+/* ========================================= */
+/* MOBILE (375px to 425px) */
+/* ========================================= */
 @media (min-width: 375px) and (max-width: 425px) {
 
     .carouselslide {
-            top: 8%;
+        top: 8%;
     }
+
     .carousel-inner {
         top: -13px;
     }
+
     .B1, .B2 {
         display: none !important;
     }
+
     .MB1, .MB2 {
-            display: block !important;
+        display: block !important;
     }
-        /* Style carousel indicators: center them and make 0,1,3,4 circular while middle (2) is a pill */
-        .carousel-indicators {
-            display: flex;
-            align-items: center; /* vertical center all buttons */
-            justify-content: center;
-            gap: 1px; /* spacing between indicators */
-            padding: 0;
-            margin: 0;
-            transform: translateY(-25px); /* nudge indicators slightly upward */
-            transition: transform 0.25s ease;
-        }
 
-        .carousel-indicators button {
-            padding: 0;
-            margin: 0;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            vertical-align: middle;
-        }
-
-        .carousel-indicators button:nth-child(1),
-        .carousel-indicators button:nth-child(2),
-        .carousel-indicators button:nth-child(4),
-        .carousel-indicators button:nth-child(5) {
-            width: 7px;
-            height: 7px;
-            padding: 0;
-            border-radius: 50%;
-            background-color: rgba(255,255,255,0.85);
-            border: none;
-            transition: transform 0.25s ease, opacity 0.25s ease;
-            box-shadow: none;
-        }
-
-        /* Middle indicator stays a wider pill with fully rounded ends */
-        .carousel-indicators button:nth-child(3) {
-            width: 50px;
-            height: 7px;
-            padding: 0;
-            border-radius: 20px; /* fully rounded pill */
-            background-color: #ffffff;
-            opacity: 1;
-            box-shadow: none;
-            transition: width 0.3s ease, transform 0.25s ease, opacity 0.25s ease;
-        }
-
-        /* Slightly smaller when not active, grows when active */
-        .carousel-indicators button:nth-child(3):not(.active) {
-            width: 50px;
-            background-color: rgba(255, 255, 255, 0.7);
-        }
-        .carousel-indicators button:nth-child(3).active {
-            width: 50px;
-            transform: scale(1.03);
-            background-color: #ffffff;
-        }
-
+    .carousel-indicators {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1px;
+        padding: 0;
+        margin: 0;
+        transform: translateY(-25px);
+        transition: transform 0.25s ease;
     }
+
+    .carousel-indicators button {
+        padding: 0;
+        margin: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+    }
+
+    .carousel-indicators button:nth-child(1),
+    .carousel-indicators button:nth-child(2),
+    .carousel-indicators button:nth-child(4),
+    .carousel-indicators button:nth-child(5) {
+        width: 7px;
+        height: 7px;
+        padding: 0;
+        border-radius: 50%;
+        background-color: rgba(255,255,255,0.85);
+        border: none;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+        box-shadow: none;
+    }
+
+    .carousel-indicators button:nth-child(3) {
+        width: 50px;
+        height: 7px;
+        padding: 0;
+        border-radius: 20px;
+        background-color: #ffffff;
+        opacity: 1;
+        box-shadow: none;
+        transition: width 0.3s ease, transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .carousel-indicators button:nth-child(3):not(.active) {
+        width: 50px;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .carousel-indicators button:nth-child(3).active {
+        width: 50px;
+        transform: scale(1.03);
+        background-color: #ffffff;
+    }
+
+}
