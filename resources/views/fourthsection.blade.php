@@ -14,7 +14,7 @@
         <img src="{{ asset('assets/CULTURE.png') }}" alt="CULTURE" class="culture">
       </div>
       <div class="col">
-        <img src="{{ asset('assets/ENTER METTACITY.png') }}" alt="ENTER METTACITY" class="entermettacity" style="height: 500px; width: auto; padding-top: 200px">
+        <a href="{{ route('enter.metta.city') }}"><img src="{{ asset('assets/ENTER METTACITY.png') }}" alt="ENTER METTACITY" class="entermettacity" style="height: 500px; width: auto; padding-top: 200px"></a>
       </div>
     </div>
 
