@@ -34,7 +34,8 @@
     <div class="grid-title fade-down">
       <img
         src="{{ asset('./assets/VI_ABOUTUS/abouttitle.png') }}"
-        alt="Frequently Asked Questions"/>
+        alt="Frequently Asked Questions"
+        class="title-bg"/>
     </div>
   </div>
 
@@ -70,25 +71,27 @@
   </div>
 </div>
   </div>
-        <div class="mettacity-features">
-          <div class="feature-card">
+        <div class="mettacity-features container text-center">
+          <div class="row align-items-center">
+          <div class="feature-card col">
             <img src="{{ asset('./assets/VI_ABOUTUS/icon1.png') }}" alt="City">
             <p>It’s a city<br>you can play in.</p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-card col">
             <img src="{{ asset('./assets/VI_ABOUTUS/icon2.png') }}" alt="Universe">
             <p>A universe<br>that responds to you.</p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-card col">
             <img src="{{ asset('./assets/VI_ABOUTUS/icon3.png') }}" alt="Rocket">
             <p>A space where<br>every visit feels new.</p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-card col">
             <img src="{{ asset('./assets/VI_ABOUTUS/icon4.png') }}" alt="Experience">
             <p>No screens<br>to just stare at.</p>
+          </div>
           </div>
         </div>
         <div class="mettacity-tagline">

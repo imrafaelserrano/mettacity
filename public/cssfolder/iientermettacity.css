@@ -802,13 +802,7 @@ html, body{
     transform: translateY(-370px); /* adjust value as needed */
   }
 
-  .main-title-img {
-    width: 125vw;           /* slightly bigger than screen */
-    max-width: none;        /* allow overflow */
-    margin-left: -10vw;      /* force edge-to-edge */
-    height: auto;
-    display: block;
-  }
+
   .zones-list{
     transform: translateY(-300px); /* adjust value as needed */
     margin-top: 0;

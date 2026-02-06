@@ -355,12 +355,7 @@ body {
 /* ================= FEATURE STRIP ================= */
 
 .mettacity-features {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  justify-content: center;
-  column-gap: 8.5rem;   /* spacing between icons */
   margin-top: 7rem;
-  text-align: center;
 }
 
 /* ================= FEATURE CARD ================= */
@@ -471,11 +466,53 @@ body {
 }
 
 @media (max-width: 425px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+.plan-bg {
+  height: 30vh;
+}
+.title-bg{
+  margin-top: 50px;
+}
+.reel-image {
+    height: 110vh;
+    
+}
+
+.about-mettacity-section {
+   transform: translateY(-90px);
+}
+
+/* Headline */
+.about-text-block h2 {
+  font-size: clamp(18px, 4vw, 44px);
+}
+.about-text-block p {
+  font-size: 12px;
+}
+.mettacity-features {
+  margin-top: 3rem;
+}
+.feature-card p {
+
+  font-size: 15px;
+}
+.feature-card img {
+  width: 150px;
+  height: auto;
+}
+
+
 /* ============================= */
 /* STATEMENT SECTION – TRUE CENTER */
 /* ============================= */
 
-
+.statement-section{
+  margin-top: -100px;
+}
 /* EYEBROW */
 .statement-eyebrow {
   margin-bottom: 16px;
@@ -556,5 +593,11 @@ body {
     margin-top: 1.2rem;
     padding: 0 8px;
   }
+}
+@media (max-width: 375px) {
+.statement-heading {
+  font-size: 15px;
+  font-weight: 800;
+}
 }
 
