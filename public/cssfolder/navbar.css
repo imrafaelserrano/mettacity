@@ -1,4 +1,9 @@
+/* Import Google Font (Poppins) with weights 200 and 400 */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+/* =========================
+   GLOBAL CSS VARIABLES
+========================= */
 :root{
   --headerBgH: 210px;
   --logoOffsetY: 25px;
@@ -10,62 +15,77 @@
 .header-bg{
   width: 100%;
   height: var(--headerBgH);
-  background-size: cover;
-  background-position: center;
+
   position: fixed;
   top: 0;
   left: 0;
+
   z-index: 9999;
   pointer-events: none;
 }
+
+/* =========================
+   HEADER BACKGROUND IMAGE
+========================= */
 .header-bg-img{
   width: 100%;
   height: var(--headerBgH);
-  background-size: cover;
-  background-position: center;
+
   position: fixed;
   top: 0;
   left: 0;
+
   pointer-events: none;
+  z-index: 1;
 }
 
-.header-bg a,
-.header-bg button{
-  pointer-events: auto;
-}
-
-/* Header inner content */
+/* =========================
+   HEADER INNER CONTENT
+========================= */
 .header-content{
   position: absolute;
   top: 10px;
   width: 100%;
   z-index: 10;
+
+  pointer-events: auto;
 }
 
 /* =========================
-   NAVIGATION
+   NAVIGATION (DESKTOP)
 ========================= */
 .header-nav{
   background: #000;
   padding: 8px 24px;
   border-radius: 999px;
+
   font-family: "Poppins";
+
   display: flex;
   align-items: center;
   gap: 16px;
 
   list-style: none;
   margin: 0;
+
   white-space: nowrap;
+  pointer-events: auto;
+
+  position: relative;
+  z-index: 20;
 }
 
 .header-nav .nav-link{
   color: #fff;
   font-weight: 500;
+
   padding: 8px 14px;
   border-radius: 999px;
+
   text-decoration: none;
   transition: background .2s ease, color .2s ease, transform .2s ease;
+
+  pointer-events: auto;
 }
 
 .header-nav .nav-link:hover{
@@ -80,11 +100,12 @@
 }
 
 /* =========================
-   LOGO
+   LOGO (DESKTOP CENTER)
 ========================= */
 .logo-img{
   margin-top: 50px;
   max-height: 60px;
+  pointer-events: auto;
 }
 
 .col-mid{
@@ -95,12 +116,14 @@
 }
 
 /* =========================
-   CTA + SOCIAL
+   CTA + SOCIAL ICONS (DESKTOP RIGHT)
 ========================= */
 .plan-visit-img{
   height: 50px;
   cursor: pointer;
+
   transition: transform .25s ease;
+  pointer-events: auto;
 }
 
 .plan-visit-img:hover{
@@ -110,66 +133,83 @@
 .social-icon{
   width: 36px;
   height: 36px;
+
   border-radius: 50%;
   background: #fff;
   border: 2px solid #000;
+
   color: #000;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
   text-decoration: none;
   transition: transform .25s ease;
+
+  pointer-events: auto;
 }
 
 .social-icon:hover{
   transform: scale(1.15);
 }
-/* MOBILE MENU BUTTON */
+
+/* =========================
+   MOBILE MENU BUTTON (HAMBURGER)
+========================= */
 .menu-btn{
-  pointer-events: auto;
   border: 0;
-  background: #000;
-  color: #fff;
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
+  width: 46px;
+  height: 46px;
+
+  border-radius: 14px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
+  color: #000000;
+  background: #f2f4fe;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  pointer-events: auto;
+  position: relative;
+  z-index: 30;
 }
 
-/* OFFCANVAS LINKS */
-.mobile-nav{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.mobile-nav li{
-  margin-bottom: 12px;
-}
-
-.mobile-nav a{
+/* =========================
+   MOBILE LOGO (NEW)
+========================= */
+.mobile-logo-link{
+  display: inline-flex;
+  align-items: center;
+  pointer-events: auto;
   text-decoration: none;
-  color: #000;
-  font-weight: 600;
 }
 
-/* RESPONSIVE HEADER TWEAKS */
-@media (max-width: 768px){
+.mobile-logo-img{
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
 
+/* =========================
+   RESPONSIVE HEADER TWEAKS
+========================= */
+@media (max-width: 768px){
   :root{
-    --headerBgH: 120px;       /* make header shorter on mobile */
-    --logoOffsetY: 10px;      /* less offset */
+    --headerBgH: 120px;
+    --logoOffsetY: 10px;
   }
 
   .header-content{
-    top: 10px;                /* bring content up */
+    top: 10px;
   }
 
   .logo-img{
-    max-height: 46px;         /* smaller logo */
+    max-height: 46px;
   }
 
   .social-icon{
@@ -180,30 +220,15 @@
   .plan-visit-img{
     height: 42px;
   }
-}
-/* MOBILE MENU BUTTON */
-.menu-btn{
-  pointer-events: auto;
-  border: 0;
-  width: 46px;
-  height: 46px;
-  border-radius: 14px;
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  color: #fff;
-  background: rgb(0, 0, 0);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-
+  /* Make mobile logo slightly smaller if needed */
+  .mobile-logo-img{
+    height: 25px;
+  }
 }
 
 /* =========================
    MOBILE OFFCANVAS DESIGN
-   (Gradient + optional grid)
 ========================= */
 .mobile-offcanvas{
   color: #111;
@@ -214,24 +239,28 @@
   position: relative;
   overflow: hidden;
 
-  /* Gradient inspired by your main background */
   background: linear-gradient(180deg,
     rgba(245, 210, 255, 0.95) 0%,
     rgba(215, 225, 255, 0.92) 45%,
     rgba(255, 255, 255, 0.92) 100%
   );
+
+  /* Push menu content down */
+  padding-top: 50px !important;
 }
 
-/* Optional subtle grid overlay (looks like your BG) */
 .mobile-offcanvas-body::before{
   content: "";
   position: absolute;
   inset: 0;
+
   background-image:
     linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0,0,0,.06) 1px, transparent 1px);
+
   background-size: 34px 34px;
   opacity: .18;
+
   pointer-events: none;
 }
 
@@ -240,7 +269,82 @@
   color: #000000;
 }
 
-/* Nav layout */
+/* =========================
+   MOBILE OFFCANVAS TOP
+========================= */
+.mobile-offcanvas-top{
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  padding: 12px 6px 14px;
+  margin-bottom: 8px;
+}
+
+/* Plan Your Visit inside menu */
+.mobile-plan-visit{
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+
+  text-decoration: none;
+}
+
+.mobile-plan-visit img{
+  height: 44px;
+  width: auto;
+  transition: transform .2s ease;
+}
+
+.mobile-plan-visit:hover img{
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Social row inside offcanvas */
+.mobile-offcanvas-socials{
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.mobile-offcanvas-social{
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #000;
+  text-decoration: none;
+
+  transition: transform .2s ease;
+}
+
+.mobile-offcanvas-social:hover{
+  transform: translateY(-3px) scale(1.08);
+}
+
+.mobile-offcanvas-social i{
+  pointer-events: none;
+}
+
+/* =========================
+   MOBILE NAV LAYOUT
+========================= */
 .mobile-nav{
   position: relative;
   z-index: 1;
@@ -252,20 +356,21 @@
   padding: 8px 4px;
 }
 
-/* Links styled like modern pills */
 .mobile-link{
   text-decoration: none;
   font-weight: 800;
   letter-spacing: .5px;
 
   color: #0b0b0b;
+
   background: rgba(255,255,255,.65);
-
   border: 1px solid rgba(0,0,0,.08);
-  border-radius: 16px;
 
+  border-radius: 16px;
   padding: 14px 14px;
+
   transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+  pointer-events: auto;
 }
 
 .mobile-link:hover{
@@ -293,68 +398,17 @@
   margin: 4px 6px 2px;
   color: rgba(0,0,0,.75);
 }
+
 /* =========================
-   MOBILE HEADER SOCIALS
+   EXTRA: SMALL MOBILE FIX
 ========================= */
-.mobile-header-socials{
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-left: 16px;
-}
-.mobile-header-social{
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #fff;
-  border: 2px solid #000;
-  color: #000;
-  text-decoration: none;
-  font-size: 14px;
-
-  transition: transform .2s ease;
-}
-
-.mobile-header-social:hover{
-  transform: scale(1.1);
-}
-/* Facebook */
-.mobile-header-social:hover .fa-facebook-f{
-  
-  color: #1877f2;
-}
-
-/* Instagram */
-.mobile-header-social:hover .fa-instagram{
-  color: #e1306c;
-}
-
-/* X / Twitter */
-.mobile-header-social:hover .fa-x-twitter{
-  color: #000;
-}
-
-/* optional lift */
-.mobile-header-social:hover{
-  background: #fff;
-  transform: translateY(-3px) scale(1.08);
-}
-/* =========================
-   MOBILE: HIDE LOGO + SOCIALS
-   (We already used d-none d-md-flex in HTML,
-    but this is extra safety.)
-========================= */
-@media (max-width: 768px){
-  :root{
-    --headerBgH: 120px;     /* shorter header bg on mobile */
-    --logoOffsetY: 0px;
+@media (max-width: 360px){
+  .mobile-offcanvas-top{
+    flex-direction: column;
+    align-items: center;
   }
-  .header-content{
-    top: 10px;
+
+  .mobile-offcanvas-socials{
+    justify-content: center;
   }
 }
